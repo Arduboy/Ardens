@@ -82,7 +82,7 @@
                 Module.ccall('setparam', null, ['string', 'string'], ['loading', '1'])
                 const param = p[0];
                 const fname = p[1];
-                const fetchURL = fname;
+                const fetchURL = 'https://api.combee.net/arduboyGet?url=' + fname;
                 fetch(fetchURL)
                     .then(rsp => rsp.arrayBuffer())
                     .then(buf => loadFile(param, fname, new Uint8Array(buf)));
